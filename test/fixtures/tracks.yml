@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  status: 1
+  branch: one
+  assigned: one
+  owner: one
+
+two:
+  code: MyString
+  status: 1
+  branch: two
+  assigned: two
+  owner: two

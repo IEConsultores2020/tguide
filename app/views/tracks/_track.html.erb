@@ -1,0 +1,39 @@
+<div id="<%= dom_id track %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Code:</strong>
+    <%= track.code %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= track.status %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Branch:</strong>
+    <%= track.branch_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Assigned:</strong>
+    <%= track.assigned_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Owner:</strong>
+    <%= track.owner_id %>
+  </p>
+
+  <%= content_tag(:div, "", data: {
+    controller: track"
+  }) %>
+
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this track", track, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this track', edit_track_path(track), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+
+
+</div>
