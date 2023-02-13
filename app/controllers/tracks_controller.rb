@@ -1,9 +1,10 @@
 class TracksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_track, only: %i[ show edit update destroy ]
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = Track.all
+    @tracks = Track.where(owner_id: current_user.id)
   end
 
   # GET /tracks/1 or /tracks/1.json
@@ -22,7 +23,7 @@ class TracksController < ApplicationController
   # POST /tracks or /tracks.json
   def create
     @track = Track.new(track_params)
-
+    @track.owner_id = current_user.id
     respond_to do |format|
       if @track.save
         format.html { redirect_to track_url(@track), notice: "Track was successfully created." }

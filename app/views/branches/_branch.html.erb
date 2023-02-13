@@ -1,17 +1,12 @@
 <div id="<%= dom_id branch %>">
   <p class="my-5">
+  <strong class="block font-medium mb-1">Company:</strong>
+  <%= branch.company_name %>
+  </p>
+
+  <p class="my-5">
     <strong class="block font-medium mb-1">Name:</strong>
     <%= branch.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Company:</strong>
-    <%= branch.company_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= branch.user_id %>
   </p>
 
   <% if action_name != "show" %>

@@ -1,9 +1,11 @@
 class BranchesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_branch, only: %i[ show edit update destroy ]
 
   # GET /branches or /branches.json
   def index
-    @branches = Branch.all
+    @branches = Branch.where(user_id: current_user.id)
+
   end
 
   # GET /branches/1 or /branches/1.json
@@ -22,6 +24,7 @@ class BranchesController < ApplicationController
   # POST /branches or /branches.json
   def create
     @branch = Branch.new(branch_params)
+    @branch.user_id = current_user.id
 
     respond_to do |format|
       if @branch.save

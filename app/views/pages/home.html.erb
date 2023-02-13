@@ -1,14 +1,11 @@
 <div>
-  <h1 class="font-bold text-4xl">Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <h2> When you need to control state of papers  like forms, certificates, records and reports identified with a unique number TGUIDE help you. Deliver this paper to a person encharged it's created in the app and assigned in state "delivered" to this person. When your receive the document, it's finished the process and the sstate it's changed to state to received. <h2>
-  <% if current_user %>
-    <strong><%= current_user.email %></strong></br>
-    <%= link_to "Tracks", tracks_path %>
-    <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" } %>
-  <% else %>
-    <%= link_to "login", new_user_session_path %>
-  <% end %>  
+  <br>
+  <br>
+  <h1 class="font-bold text-4xl">ADMINISTRATION OF PAPERS WITH UNIQUE IDENTIFICATION</h1>
+  <br>
+  <h2> Take control of papers like forms, certificates, records, or reports, which it's identified with a unique number, TGUIDE helps you.</h2> 
+  <h2> When delivering this paper to a person is registered on the app, assigning the status  "delivered" automatically. Upon receiving, the status is changed "received". <h2>
+  <br>
   <% content_tag(:div, "", data: {
 	controller: "track"
 	})%>

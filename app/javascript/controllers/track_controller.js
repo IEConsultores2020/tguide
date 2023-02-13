@@ -5,6 +5,7 @@ import consumer from "channels/consumer"
 export default class extends Controller {
   connect() {
     console.log("Hello.Stimulus!");
+    let trackId = this.element.dataset.trackId;
 		this.sub = this.createActionCableChannel();
 		console.log(this.sub);      
   }
