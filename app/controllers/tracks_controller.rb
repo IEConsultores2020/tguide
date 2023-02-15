@@ -24,6 +24,7 @@ class TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     @track.owner_id = current_user.id
+    @track.branch_id = Branch.where(user_id: current_user.id).order(id: :asc).first
     respond_to do |format|
       if @track.save
         format.html { redirect_to track_url(@track), notice: "Track was successfully created." }

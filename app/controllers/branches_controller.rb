@@ -4,8 +4,7 @@ class BranchesController < ApplicationController
 
   # GET /branches or /branches.json
   def index
-    @branches = Branch.where(user_id: current_user.id)
-
+    @branches = Branch.where(user_id: current_user.id).order(name: :asc)
   end
 
   # GET /branches/1 or /branches/1.json
