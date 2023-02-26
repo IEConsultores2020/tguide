@@ -18,16 +18,16 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <%= link_to "Home", root_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap'  %>  |
-        <%= link_to "Companies", companies_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap'  %>   |
-          <%= link_to "Branches", branches_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>   |  
-          <%= link_to "People", people_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>   |  
-          <%= link_to "Tracks", tracks_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>   |
-          <strong>  Your are <%= current_user.email %></strong> |
-          <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" } %>
+        <%= link_to "Home", root_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
+        <%# link_to "Companies", companies_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
+        <%= link_to "Branches", branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>   
+        <%= link_to "People", people_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %> 
+        <%# link_to "Tracks", tracks_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <strong>  Your are <%= current_user.email %></strong>
+        <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" }, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
       <% else %>
-          <%= link_to "login", new_user_session_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %> |
-          <%= link_to "Sign up", new_user_registration_path, data: {action: "click->dropdown#toggle"}, class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-gray-300 whitespace-nowrap' %>
+        <%= link_to "login", new_user_session_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <%= link_to "Sign up", new_user_registration_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
       <% end %>
     </div>
   </div>

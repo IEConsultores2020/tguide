@@ -1,39 +1,17 @@
-<div id="<%= dom_id track %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Code:</strong>
-    <%= track.code %>
-  </p>
+<li id="<%= "#{dom_id(track)}_item" %>" class="py-3">
+    <%= turbo_frame_tag dom_id(track) do %>
+        <div class="flex items-center justify-between">
+            <%= link_to track.code+' '+track.created_at.in_time_zone("America/Bogota").utc.strftime('%m/%d/%Y %H:%M %p'), edit_track_path(track), class: "flex-1 #{"line-throuht opacity-70" if track.delivered?}" %>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Status:</strong>
-    <%= track.status %>
-  </p>
+            <div class="flex items-center space-x-3">
+                <% if track.delivered? %>
+                    <%= button_to "Mark Received", track_path(track, track: { status:  'received'}), method: :patch, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+                <% else %>
+                    <%= button_to "Mark Delivered", track_path(track, track: { status:  'delivered'}), method: :patch, class: "bg-gray-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+                <% end %>
+            </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Branch:</strong>
-    <%= track.branch_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Assigned:</strong>
-    <%= track.assigned_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Owner:</strong>
-    <%= track.owner_id %>
-  </p>
-
-  <%= content_tag(:div, "", data: {
-    controller: track"
-  }) %>
-
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this track", track, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this track', edit_track_path(track), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-
-
-</div>
+            <%= button_to "Delete", track_path(track), method: :delete, class: "bg-red-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+        </div>
+    <% end %>
+</li>

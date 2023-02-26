@@ -2,9 +2,26 @@ class TracksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_track, only: %i[ show edit update destroy ]
 
+  def assigned_name(person_id)
+    return Person.where(id: person_id)[0][:name]
+  end
+  helper_method :assigned_name
+
+  def assigned_branch_id(person_id)
+    puts "paramspersonid1 #{person_id}"
+    return Person.where(id: person_id)[0][:branch_id] if person_id =! nil : 1
+  end
+  helper_method :assigned_branch_id
+
+  def assigned_branch_name(person_id) 
+    puts "paramspersonid2 #{person_id}"
+    return Branch.where(id: assigned_branch_id(person_id))[0][:name]
+  end
+  helper_method :assigned_branch_name
+
   # GET /tracks or /tracks.json
   def index
-    @tracks = Track.where(owner_id: current_user.id)
+    @tracks = Track.where(owner_id: current_user.id, assigned_id: params[:person_id]).order(status: :desc, created_at: :asc, updated_at: :desc)
   end
 
   # GET /tracks/1 or /tracks/1.json
@@ -24,14 +41,13 @@ class TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     @track.owner_id = current_user.id
-    @track.branch_id = Branch.where(user_id: current_user.id).order(id: :asc).first
+    @track.status = 0
     respond_to do |format|
       if @track.save
+        format.turbo_stream
         format.html { redirect_to track_url(@track), notice: "Track was successfully created." }
-        format.json { render :show, status: :created, location: @track }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@track)}_form", partial: "form", locals: { track: @track})}
       end
     end
   end
@@ -41,10 +57,9 @@ class TracksController < ApplicationController
     respond_to do |format|
       if @track.update(track_params)
         format.html { redirect_to track_url(@track), notice: "Track was successfully updated." }
-        format.json { render :show, status: :ok, location: @track }
       else
+        format.turbo_stream{ render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@track)}_form", partial: "form", locals: { track: @track })}        
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @track.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,6 +69,7 @@ class TracksController < ApplicationController
     @track.destroy
 
     respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@track)}_item")} 
       format.html { redirect_to tracks_url, notice: "Track was successfully destroyed." }
       format.json { head :no_content }
     end
@@ -69,4 +85,5 @@ class TracksController < ApplicationController
     def track_params
       params.require(:track).permit(:code, :status, :branch_id, :assigned_id, :owner_id)
     end
+
 end

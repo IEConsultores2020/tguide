@@ -1,32 +1,10 @@
-<div id="<%= dom_id person %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
-    <%= person.email %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= person.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Citizenship:</strong>
-    <%= person.citizenship %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Nid:</strong>
-    <%= person.nid %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Mobile:</strong>
-    <%= person.mobile %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this person", person, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this person', edit_person_path(person), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+<li id="<%= "#{dom_id(person)}_item" %>" class="py-3">
+    <%= turbo_frame_tag dom_id(person) do %>
+        <div class="flex items-center justify-between">
+          <%= link_to person.name+' '+person.mobile+' '+ person.email, edit_person_path(person), class: "flex-1 #{"line-throuht opacity-50" }" %>
+          <%# button_to "Tracks", tracks_path, method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+          <%= button_to "Tracks", person_tracks_path(person), method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+          <%= button_to "Delete", person_path(person), method: :delete, class: "bg-red-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+        </div> 
+    <% end %>
+</li>

@@ -3,7 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :branchs
+  has_one :branch
   has_many :track_as_owner, :foreign_key => 'owner_id', :class_name => 'Track'
-  has_many :track_as_assigned, :foreign_key => 'assigned_id', :class_name => 'Track'
 end

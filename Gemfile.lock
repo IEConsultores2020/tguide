@@ -98,6 +98,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    email_validator (2.2.4)
+      activemodel
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -234,6 +236,7 @@ DEPENDENCIES
   country_select (~> 8.0)
   debug
   devise (~> 4.8)
+  email_validator (~> 2.2, >= 2.2.4)
   importmap-rails
   jbuilder
   pg (~> 1.1)

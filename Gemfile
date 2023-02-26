@@ -77,3 +77,6 @@ end
 gem "devise", "~> 4.8"
 
 gem 'country_select', '~> 8.0'
+
+# add this to your Gemfile
+gem 'email_validator', '~> 2.2', '>= 2.2.4'

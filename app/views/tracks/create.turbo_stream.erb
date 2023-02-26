@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "tracks" do %>
+    <%= render "track", track: @track %>
+<% end %>
+
+<%= turbo_stream.replace "#{dom_id(Track.new)}_form" do %>
+    <%= render "form", track: Track.new %>
+<% end %>

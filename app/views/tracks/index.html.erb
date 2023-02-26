@@ -1,14 +1,15 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="mx-auto max-w-3xl mt-24">
+  <h1 class="font-bold text-4xl mb-6">Tracks for 
+    <%= assigned_name(params[:person_id]) %> 
+      Branch 
+    <%= assigned_branch_name(params[:person_id]) %> 
+  </h1>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Tracks</h1>
-    <%= link_to 'New track', new_track_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+  <%= render "form", track: Track.new %>
 
-  <div id="tracks" class="min-w-full">
+  <%= turbo_stream_from "tracks" %>
+
+  <ul id="tracks" class="divide-y list-none">
     <%= render @tracks %>
-  </div>
+  </ul>
 </div>

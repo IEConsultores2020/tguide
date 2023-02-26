@@ -1,14 +1,17 @@
-<div class="w-full">
+<div class="mx-auto max-w-3xl mt-24">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">People</h1>
-    <%= link_to 'New person', new_person_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+    <h1 class="font-bold text-4xl">People of Branch
+      <%= branch_name %>
+    </h1>
 
-  <div id="people" class="min-w-full">
+    <%= render "form", person: Person.new %>
+
+    <%= turbo_stream_from "people" %>
+
+  <ul id="people" class="divide-y list-none">
     <%= render @people %>
-  </div>
+  </ul>
 </div>

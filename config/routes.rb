@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :people
-  resources :tracks
+  
+  resources :people do
+    resources :tracks
+  end
+  
+  resources :tracks 
+
   resources :branches
   resources :companies
   get 'pages/home'

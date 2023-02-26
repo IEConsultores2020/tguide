@@ -1,4 +1,4 @@
-<%= form_with(model: track, class: "contents") do |form| %>
+<%= form_with(model: track, id:"#{dom_id(track)}_form") do |form| %>
   <% if track.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(track.errors.count, "error") %> prohibited this track from being saved:</h2>
@@ -11,17 +11,15 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :code %>
-    <%= form.text_field :code, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="mb-6">
+    <%= form.label :code, class: "sr-only" %>
+    <div class="relative">
+      <%= form.text_field :code, class: "block shadow-sm rounded-full border border-gray-200 outline-none px-6 py-4 w-full focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-50 text-lg placeholder:text-gray-400", placeholder: "Add new Track" %>
+      <%= form.hidden_field :assigned_id, value: params[:person_id] %>
+      <%= form.hidden_field :branch_id, value: assigned_branch_id(params[:person_id]) %>
+    <div class="absolute top-0 right-0">
+      <%= form.submit class: "mt-px rounded-full py-4 px-5 bg-skye-500 text-white font-medium cursor-pointer border-2 border-sky-500 hover:bg-sky-600 hover:border-sky-600" %>
+    </div>
   </div>
-
-  <div class="my-5">
-    <%= form.label :assigned_id %>
-    <%= form.text_field :assigned_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
+</div>
 <% end %>

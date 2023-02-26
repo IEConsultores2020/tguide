@@ -2,6 +2,11 @@ class PeopleController < ApplicationController
   before_action :authenticate_user!
   before_action :set_person, only: %i[ show edit update destroy ]
 
+  def branch_name
+    return Branch.find(user_id: current_user.id).first.name
+  end
+  helper_method :branch_name
+
   # GET /people or /people.json
   def index
     #Rails.logger.debug("debug2::" + branch_current_user.to_s)
@@ -12,6 +17,11 @@ class PeopleController < ApplicationController
     branch = Branch.where(user_id: current_user.id).order(id: :asc).first
     return branch.id
   end
+
+  def branch_name
+    branch = Branch.where(user_id: current_user.id).order(id: :asc).first
+    return branch.name
+  end    
 
   # GET /people/1 or /people/1.json
   def show
@@ -30,26 +40,26 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
     @person.branch_id = branch_current_user
+    puts branch_current_user
     respond_to do |format|
       if @person.save
+        format.turbo_stream
         format.html { redirect_to person_url(@person), notice: "Person was successfully created." }
-        format.json { render :show, status: :created, location: @person }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @person.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@person)}_form", partial: "form", locals: { person: @person })}
       end
     end
   end
+
 
   # PATCH/PUT /people/1 or /people/1.json
   def update
     respond_to do |format|
       if @person.update(person_params)
         format.html { redirect_to person_url(@person), notice: "Person was successfully updated." }
-        format.json { render :show, status: :ok, location: @person }
       else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@person)}_form", partial: "form", locals: { todo: @todo })}                
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,10 +69,12 @@ class PeopleController < ApplicationController
     @person.destroy
 
     respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@person)}_item")}      
       format.html { redirect_to people_url, notice: "Person was successfully destroyed." }
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
