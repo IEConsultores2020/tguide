@@ -9,19 +9,19 @@ class TracksController < ApplicationController
 
   def assigned_branch_id(person_id)
     puts "paramspersonid1 #{person_id}"
-    return Person.where(id: person_id)[0][:branch_id] if person_id =! nil : 1
+    return Person.where(id: person_id)[0][:branch_id]  if person_id != nil
   end
   helper_method :assigned_branch_id
 
   def assigned_branch_name(person_id) 
     puts "paramspersonid2 #{person_id}"
-    return Branch.where(id: assigned_branch_id(person_id))[0][:name]
+    return Branch.where(id: assigned_branch_id(person_id))[0][:name] if person_id != nil
   end
   helper_method :assigned_branch_name
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = Track.where(owner_id: current_user.id, assigned_id: params[:person_id]).order(status: :desc, created_at: :asc, updated_at: :desc)
+    @tracks = Track.where(owner_id: current_user.id, assigned_id: params[:person_id]).order(status: :asc, created_at: :asc, updated_at: :desc)
   end
 
   # GET /tracks/1 or /tracks/1.json
