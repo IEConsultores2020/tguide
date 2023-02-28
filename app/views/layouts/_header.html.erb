@@ -3,7 +3,7 @@
  <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
     <img id="rackMyPaper" src="<%= asset_path('LogoTrackMyPaper_BVGT.png') %>" draggable="true" ondragstart="drag(event)" width="26" height="43">
-    <span class="font-semibold text-xl tracking-tight"> Track My Papers</span>
+    <span class="font-semibold text-xl tracking-tight"> <%= t(:header_trackofmypapers) %> </span>
   </div>
   <div class="block lg:hidden">
     <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -18,16 +18,16 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <%= link_to "Home", root_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
-        <%# link_to "Companies", companies_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
-        <%= link_to "Branches", branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>   
-        <%= link_to "People", people_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %> 
-        <%# link_to "Tracks", tracks_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <%= link_to t(:home), root_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
+        <%# link_to t(:companies), companies_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
+        <%= link_to t(:branches), branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>   
+        <%= link_to t(:people), people_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %> 
+        <%# link_to t(:tracks), tracks_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
         <strong>  Your are <%= current_user.email %></strong>
-        <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete" }, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <%= link_to t(:log_out), destroy_user_session_path, data: { turbo_method: "delete" }, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
       <% else %>
-        <%= link_to "login", new_user_session_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
-        <%= link_to "Sign up", new_user_registration_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <%= link_to t(:login), new_user_session_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <%= link_to t(:sign_up), new_user_registration_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
       <% end %>
     </div>
   </div>
