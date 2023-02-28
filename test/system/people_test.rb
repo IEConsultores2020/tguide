@@ -1,51 +1,53 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class PeopleTest < ApplicationSystemTestCase
   setup do
     @person = people(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit people_url
-    assert_selector "h1", text: "People"
+    assert_selector 'h1', text: 'People'
   end
 
-  test "should create person" do
+  test 'should create person' do
     visit people_url
-    click_on "New person"
+    click_on 'New person'
 
-    fill_in "Branch", with: @person.branch_id
-    fill_in "Citizenship", with: @person.citizenship
-    fill_in "Email", with: @person.email
-    fill_in "Mobile", with: @person.mobile
-    fill_in "Name", with: @person.name
-    fill_in "Nid", with: @person.nid
-    click_on "Create Person"
+    fill_in 'Branch', with: @person.branch_id
+    fill_in 'Citizenship', with: @person.citizenship
+    fill_in 'Email', with: @person.email
+    fill_in 'Mobile', with: @person.mobile
+    fill_in 'Name', with: @person.name
+    fill_in 'Nid', with: @person.nid
+    click_on 'Create Person'
 
-    assert_text "Person was successfully created"
-    click_on "Back"
+    assert_text 'Person was successfully created'
+    click_on 'Back'
   end
 
-  test "should update Person" do
+  test 'should update Person' do
     visit person_url(@person)
-    click_on "Edit this person", match: :first
+    click_on 'Edit this person', match: :first
 
-    fill_in "Branch", with: @person.branch_id
-    fill_in "Citizenship", with: @person.citizenship
-    fill_in "Email", with: @person.email
-    fill_in "Mobile", with: @person.mobile
-    fill_in "Name", with: @person.name
-    fill_in "Nid", with: @person.nid
-    click_on "Update Person"
+    fill_in 'Branch', with: @person.branch_id
+    fill_in 'Citizenship', with: @person.citizenship
+    fill_in 'Email', with: @person.email
+    fill_in 'Mobile', with: @person.mobile
+    fill_in 'Name', with: @person.name
+    fill_in 'Nid', with: @person.nid
+    click_on 'Update Person'
 
-    assert_text "Person was successfully updated"
-    click_on "Back"
+    assert_text 'Person was successfully updated'
+    click_on 'Back'
   end
 
-  test "should destroy Person" do
+  test 'should destroy Person' do
     visit person_url(@person)
-    click_on "Destroy this person", match: :first
+    click_on 'Destroy this person', match: :first
 
-    assert_text "Person was successfully destroyed"
+    assert_text 'Person was successfully destroyed'
   end
 end
