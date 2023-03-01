@@ -2,9 +2,9 @@
     <%= turbo_frame_tag dom_id(person) do %>
         <div class="flex items-center justify-between">
           <%= link_to person.name+' '+person.mobile+' '+ person.email, edit_person_path(person), class: "flex-1 #{"line-throuht opacity-50" }" %>
-          <%# button_to "Tracks", tracks_path, method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
-          <%= button_to "Tracks", person_tracks_path(person), method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
-          <%= button_to "Delete", person_path(person), method: :delete, class: "bg-red-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+          <%# button_to Tracks", tracks_path, method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+          <%= button_to t(:tracks), person_tracks_path(person), method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+          <%= button_to t(:delete), person_path(person), method: :delete, class: "bg-red-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
         </div> 
     <% end %>
 </li>

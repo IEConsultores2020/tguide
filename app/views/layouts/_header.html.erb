@@ -26,7 +26,7 @@
         <strong>  Your are <%= current_user.email %></strong>
         <%= link_to t(:log_out), destroy_user_session_path, data: { turbo_method: "delete" }, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
       <% else %>
-        <%= link_to t(:login), new_user_session_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <%= link_to t(:log_in), new_user_session_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
         <%= link_to t(:sign_up), new_user_registration_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
       <% end %>
     </div>

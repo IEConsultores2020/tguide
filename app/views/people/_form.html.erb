@@ -12,22 +12,21 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :name %>
+    <%= form.label t(:name) %>
     <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :email %>
+    <%= form.label t(:email) %>
     <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :citizenship %>
+    <%= form.label t(:citizenship) %>
     <%= form.country_select :citizenship, priority_countries: ["CO"], class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-  <%# flag_icon(:citizenship.downcase.to_sym) %>
   </div>
 
   <div class="my-5">
@@ -36,7 +35,7 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :mobile %>
+    <%= form.label t(:mobile) %>
     <%= form.telephone_field :mobile, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 

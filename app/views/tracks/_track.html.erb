@@ -5,13 +5,13 @@
 
             <div class="flex items-center space-x-3">
                 <% if track.delivered? %>
-                    <%= button_to "Mark Received", track_path(track, track: { status:  'received'}), method: :patch, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+                    <%= button_to t(:mark_received), track_path(track, track: { status:  'received'}), method: :patch, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
                 <% else %>
-                    <%= button_to "Mark Delivered", track_path(track, track: { status:  'delivered'}), method: :patch, class: "bg-gray-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+                    <%= button_to t(:mark_delivered), track_path(track, track: { status:  'delivered'}), method: :patch, class: "bg-gray-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
                 <% end %>
             </div>
 
-            <%= button_to "Delete", track_path(track), method: :delete, class: "bg-red-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+            <%= button_to t(:delete), track_path(track), method: :delete, class: "bg-red-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
         </div>
     <% end %>
 </li>

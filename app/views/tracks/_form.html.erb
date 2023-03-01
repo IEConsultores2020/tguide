@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="mb-6">
-    <%= form.label :code, class: "sr-only" %>
+    <%= form.label t(:code), class: "sr-only" %>
     <div class="relative">
       <%= form.text_field :code, class: "block shadow-sm rounded-full border border-gray-200 outline-none px-6 py-4 w-full focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-50 text-lg placeholder:text-gray-400", placeholder: "Add new Track" %>
       <%= form.hidden_field :assigned_id, value: params[:person_id] %>

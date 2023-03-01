@@ -30,7 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
-  hello: "Hola mundo"
+  hello_world: "Hola mundo"
+  hello: "Hola"
   header_trackofmypapers: "Track My Papers"
   home: "Inicio"
   home_title: "ADMINISTRACION DE DOCUMENTOS CON IDENTIFICACION UNICA"
@@ -38,16 +39,18 @@ es:
   home_p1l2: "Cuando entrega el documento a una persona que se encuentre registrada en la aplicación, se crea la guia y se asigna automáticamente como enviado (Delivered). Una vez se recibe, el estado de la guía queda como recibido (Received)."
   email: "Email"
   log_in: "Conectar"
-  sign_up: "Suscribir"
+  sign_up: "Registrar"
   sign_out: "Desconectar"
   log_out: "Salir"
   forgot_password: "Olvido su contraseña?"
   characters_minimum: "caracteres mínimo"
   remember_me: "Recordarme"  
   branch: "Sucursal"
-  branches: "Surcusales"
+  branches: "Sucursales"
+  citizenship: "Pais Origen"
   company: "Compañia"
   companies: "Compañias"
+  mobile: "Número Celular"
   person: "Persona"
   people: "Personas"
   track: "Guia"
@@ -61,7 +64,48 @@ es:
   back: "Regresar"
   editing: "Editando"
   update: "Actualizar"
+
+  mark_received: "Mark Received"
+  mark_delivered: "Mark Delivered"
+
+  welcome: "Bienvenido"
+  resend_confirmation_instructions: "Enviar instrucciones de confirmación"
+  send_reset_password_instruction: "Enviarme instrucciones de cambio de contraseña"
+
+  confirm_account: "Confirm my account"
+  you_can_confirm: "Puede confirmar su cuenta, enviando mail picando en el enlace inferior:"
+  weare_contacting: "Lo estamos contactando para notificar que su correo "
+  is_being_changed: "esta siendo cambiado"
+  has_been_changed: "ha sido cambiado"
+  to: " a "
+  of: " de "
+  for: " para "
   
+  someone_has_requested_a_link: "Alguien ha solicitado un enlace para cambiar su contraseña. Puede hacerlo esto en el enlace inferior."
+
+  password: "Contraseña"
+  new_password: "Nueva contraseña"
+  change_my_password: "Cambiar mi contraseña"
+  change_your_password: "Cambiar su contraseña"
+  current_password: "Contraseña acgtual"
+  password_confirmation: "Confirmación Contraseña"
+
+  if_you_didnont_request: "Si usted no lo solicitó, ignore este correo."
+  you_pass_wont_change_until: "La contraseña no cambia hasta que usted acceda al enlace anterior y cree uno nuevo."
+
+  you_account_has_locked: "Su cuenta fue bloqueado por excesivo número de intentos fallidos de conexión."
+  click_unlock: "Marque el enlace abajo para desbloquear su cuenta:"
+  unlock_my_account: "Desbloquear my cuenta"
+  cancel_my_account: "Cancelar my cuenta"
+  unhappy: "Triste?"
+
+  didnot_receive_confirmation_instrucions: "No recibió instrucciones de confirmatión?"
+  didnot_receive_unlock_instructions: "No reicibió instrucciones de desbloque?"
+  resend_unlock_instructions: "Reenviar instrucciones de desbloqueo"
+
+  currently_waiting_confirmation: "Esperando confirmación para:"
+
+
   activerecord:
     errors:
       messages:
