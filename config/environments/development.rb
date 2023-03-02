@@ -41,6 +41,22 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.perform_deliveries = true
+  
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+  config.action_mailer.smtp_settings = {
+    from: 'dontreply@nanducho.com',
+    user_name: 'donotreply@nanducho.com',
+    password: 'donotreply23',
+    address: 'mail.nanducho.com ',
+    domain: 'mail.nanducho.com ',
+    port: '2880',
+    authentication: :plain,
+  }
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

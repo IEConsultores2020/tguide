@@ -20,7 +20,7 @@
 
         <%= link_to t(:home), root_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
         <%# link_to t(:companies), companies_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
-        <%= link_to t(:branches), branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>   
+        <% link_to t(:branches), branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>   
         <%= link_to t(:people), people_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %> 
         <%# link_to t(:tracks), tracks_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
         <strong>  Your are <%= current_user.email %></strong>
