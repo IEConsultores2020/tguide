@@ -33,12 +33,12 @@
   </div>
 
   <div class="actions">
-    <%= f.submit :update, t(:update) %>
+    <%= f.submit :update, t(:update), class: "ml-2 rounded-lg py-3 px-5 bg-green-500 inline-block font-medium"%>
   </div>
 <% end %>
 
 <h3> <%= t(:cancel_my_account) %> </h3>
 
-<p><%= t(:unhappy) %> <%= button_to t(:cancel_my_account), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= t(:unhappy) %> <%= button_to t(:cancel_my_account), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "ml-2 rounded-lg py-3 px-5 bg-red-500 inline-block font-medium" %></p>
 
-<%= link_to t(:back), :back %>
+<%= link_to t(:back), :back, class: "ml-2 rounded-lg py-3 px-5 bg-gray-500 inline-block font-medium" %>

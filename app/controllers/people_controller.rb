@@ -20,10 +20,12 @@ class PeopleController < ApplicationController
     branch.id
   end
 
-  def branch_name
-    branch = Branch.where(user_id: current_user.id).order(id: :asc).first
-    branch.name
+  def branch_name(branch_id)
+    #branch = Branch.where(user_id: current_user.id).order(id: :asc).first
+    #branch.name
+    return Branch.where(id: branch_id)[0][:name] unless branch_id.nil?
   end
+  helper_method :branch_name
 
   # GET /people/1 or /people/1.json
   def show; end

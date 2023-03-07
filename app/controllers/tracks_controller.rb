@@ -10,7 +10,6 @@ class TracksController < ApplicationController
   helper_method :assigned_name
 
   def assigned_branch_id(person_id)
-    puts "paramspersonid1 #{person_id}"
     return Person.where(id: person_id)[0][:branch_id] unless person_id.nil?
   end
   helper_method :assigned_branch_id

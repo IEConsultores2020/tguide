@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :tracks
 
-  resources :branches
+  resources :branches  do
+    resources :people
+  end
   resources :companies
   get 'pages/home'
   # devise_for :users

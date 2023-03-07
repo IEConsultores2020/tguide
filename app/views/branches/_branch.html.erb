@@ -10,6 +10,7 @@
   </p>
 
   <% if action_name != "show" %>
+    <%= link_to t(:branches), branch_people_path(branch), method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
     <%= link_to t(:show), branch, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to t(:edit), edit_branch_path(branch), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
