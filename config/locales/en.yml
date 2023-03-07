@@ -37,6 +37,8 @@ en:
   home_title: "ADMINISTRATION OF PAPERS WITH UNIQUE IDENTIFICATION"
   home_p1l1: "Take control of papers like forms, certificates, records, or reports, which it's identified with a unique number called track, TGUIDE helps you."
   home_p1l2: "When delivering this paper to a person is registered on the app, assigning the status Delivered automatically. Upon receiving, the status is changed a Received."
+
+  continue: "Continue"
   email: "email"
   log_in: "Login"
   sign_up: "Sign_up"
