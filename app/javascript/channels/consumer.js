@@ -4,3 +4,9 @@
 import { createConsumer } from "@rails/actioncable"
 
 export default createConsumer()
+
+createConsumer(getWebSocketURL)
+
+function getWebSocketURL() {
+  return "ws://194.195.222.217:8000/cable"
+}
