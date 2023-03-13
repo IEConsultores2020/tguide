@@ -4,28 +4,25 @@ class PeopleController < ApplicationController
   before_action :authenticate_user!
   before_action :set_person, only: %i[show edit update destroy]
 
-  def branch_name
-    Branch.find(user_id: current_user.id).first.name
-  end
-  helper_method :branch_name
+  # def branch_name
+  #   Branch.find(user_id: current_user.id).first.name
+  # end
+  # helper_method :branch_name
 
   # GET /people or /people.json
   def index
-    # Rails.logger.debug("debug2::" + branch_current_user.to_s)
-    @people = Person.where(branch_id: branch_current_user)
+    @people = Person.where(branch_id: default_branch_id)
   end
 
-  def branch_current_user
-    branch = Branch.where(user_id: current_user.id).order(id: :asc).first
-    branch.id
+  def default_branch_id
+    params[:branch_id].present? ? params[:branch_id] : @person.branch_id
   end
+  helper_method :default_branch_id
 
-  def branch_name(branch_id)
-    #branch = Branch.where(user_id: current_user.id).order(id: :asc).first
-    #branch.name
-    return Branch.where(id: branch_id)[0][:name] unless branch_id.nil?
+  def default_branch_name
+    return Branch.where(id: default_branch_id).pluck(:name)[0]
   end
-  helper_method :branch_name
+  helper_method :default_branch_name
 
   # GET /people/1 or /people/1.json
   def show; end
@@ -41,8 +38,6 @@ class PeopleController < ApplicationController
   # POST /people or /people.json
   def create
     @person = Person.new(person_params)
-    @person.branch_id = branch_current_user
-    puts branch_current_user
     respond_to do |format|
       if @person.save
         format.turbo_stream

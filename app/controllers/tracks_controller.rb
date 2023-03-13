@@ -4,21 +4,25 @@ class TracksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_track, only: %i[show edit update destroy]
 
-  def assigned_name(person_id)
-    Person.where(id: person_id)[0][:name]
+  def default_assigned_id
+    params[:person_id].present? ? params[:person_id] : @track.assigned_id
   end
-  helper_method :assigned_name
+  helper_method :default_assigned_id
 
-  def assigned_branch_id(person_id)
-    return Person.where(id: person_id)[0][:branch_id] unless person_id.nil?
+  def default_assigned_name
+    Person.where(id: default_assigned_id).pluck(:name)[0]
   end
-  helper_method :assigned_branch_id
+  helper_method :default_assigned_name
 
-  def assigned_branch_name(person_id)
-    puts "paramspersonid2 #{person_id}"
-    return Branch.where(id: assigned_branch_id(person_id))[0][:name] unless person_id.nil?
+  def default_branch_id
+    Person.where(id: default_assigned_id).pluck(:branch_id)[0]
   end
-  helper_method :assigned_branch_name
+  helper_method :default_branch_id
+
+  def default_branch_name
+    Branch.where(id: default_branch_id).pluck(:name)[0]
+  end
+  helper_method :default_branch_name
 
   # GET /tracks or /tracks.json
   def index

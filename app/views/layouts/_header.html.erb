@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">    
+<header class="navbar navbar-fixed-top navbar-inverse">
 
  <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -13,15 +13,15 @@
 
 
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <% if current_user %> 
+      <% if current_user %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <%= link_to t(:home), root_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
         <%# link_to t(:companies), companies_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
-        <%# link_to t(:branches), branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>   
-        <%= link_to t(:people), people_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %> 
+        <%# link_to t(:branches), branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
+        <%# link_to t(:people), people_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
         <%# link_to t(:tracks), tracks_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
         <strong>  Your are <%= current_user.email %></strong>
         <%= link_to t(:log_out), destroy_user_session_path, data: { turbo_method: "delete" }, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
@@ -31,10 +31,10 @@
       <% end %>
     </div>
   </div>
-  <div> 
+  <div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </div>
 </nav>
-  
+
 </header>

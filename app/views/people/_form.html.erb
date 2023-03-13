@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field :branch_id, value: default_branch_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   <div class="my-5">
     <%= form.label t(:name) %>
     <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
