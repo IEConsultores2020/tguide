@@ -33,10 +33,16 @@ en:
   hello_world: "Hello world"
   hello: "Hola"
   header_trackofmypapers: "Track My Papers"
-  home: "Inicio" 
+  home: "Inicio"
   home_title: "ADMINISTRATION OF PAPERS WITH UNIQUE IDENTIFICATION"
   home_p1l1: "Take control of papers like forms, certificates, records, or reports, which it's identified with a unique number called track, TGUIDE helps you."
   home_p1l2: "When delivering this paper to a person is registered on the app, assigning the status Delivered automatically. Upon receiving, the status is changed a Received."
+  home_p1l3: "Branch: A branch has persons to assign documents."
+  home_p1l4: "People: One person work in a branch and can to deliver one documents or he can return the document. "
+  home_p1l5: "The user can include, delete or update a person."
+  home_p1l6: "Track: The track or guide is the unique identificatión of the document."
+  home_p1l7: "The registered user can to assign documents (delivered) or to receive (received) document."
+  home_p1l8: "The list is ordered first the documents delivered ordered by date the more old to more recent. And next the received"
 
   continue: "Continue"
   email: "email"
@@ -70,7 +76,7 @@ en:
   welcome: "Welcome"
   resend_confirmation_instructions: "Resend confirmation instructions"
   send_reset_password_instruction: "Send me reset password instructions"
-  
+
   confirm_account: 'Confirm my account'
   you_can_confirm: "You can confirm your account email through the link below:"
   weare_contacting: "We're contacting you to notify you that your email "
