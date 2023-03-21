@@ -14,12 +14,13 @@
     <%= favicon_link_tag asset_path('LogoTrackMyPaper_RVGT.png') %>
   </head>
 
-  <body>
+  <body "bg-gradient-to-r from-pink-50 to-sky-50 container px-12 xl:px-0 py-24 mx-auto max-w-5xl antialiased">
     <header class="navbar navbar-fixed-top navbar-inverse">
       <%= render 'layouts/header' %>
-      <div id="container"> 
+      <div id="container">
     </header>
     <main class="container mx-auto mt-28 px-5 flex">
+
       <%= yield %>
     </main>
   </body>

@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :tracks
   end
 
-  resources :tracks
+  resources :tracks do
+    collection do
+      get 'list'
+    end
+  end
 
   resources :branches  do
     resources :people

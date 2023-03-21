@@ -72,6 +72,12 @@ en:
   back: "Back"
   Editing: "Editing"
   update: "Update"
+  filter: "Filter"
+
+  add_new_track: "Add new Track"
+  mark_received: "Mark Received"
+  mark_delivered: "Mark Delivered"
+
 
   welcome: "Welcome"
   resend_confirmation_instructions: "Resend confirmation instructions"
@@ -85,6 +91,8 @@ en:
   to: " to "
   of: " de "
   for: " for "
+
+
 
   someone_has_requested_a_link: "Someone has requested a link to change your password. You can do this through the link below."
 

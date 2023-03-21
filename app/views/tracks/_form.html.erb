@@ -14,7 +14,7 @@
   <div class="mb-6">
     <%= form.label t(:code), class: "sr-only" %>
     <div class="relative">
-      <%= form.text_field :code, class: "block shadow-sm rounded-full border border-gray-200 outline-none px-6 py-4 w-full focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-50 text-lg placeholder:text-gray-400", placeholder: "Add new Track" %>
+      <%= form.text_field :code, autofocus: true, class: "block shadow-sm rounded-full border border-gray-200 outline-none px-6 py-4 w-full focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-50 text-lg placeholder:text-gray-400", placeholder: t(:add_new_track) %>
       <%= form.hidden_field :assigned_id, value: default_assigned_id %>
       <%= form.hidden_field :branch_id, value: default_branch_id %>
     <div class="absolute top-0 right-0">
@@ -22,4 +22,5 @@
     </div>
   </div>
 </div>
+<%= render :partial => 'shared/form_focus', :locals => {:focusField => ':code'} -%>
 <% end %>

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   # perform the check before each controller action are executed
   before_action :check_concurrent_session
   around_action :switch_locale

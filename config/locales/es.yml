@@ -40,10 +40,10 @@ es:
   home_p1l3: "Sucursal: Seleccione botón personas para ir a la pantalla"
   home_p1l4: "Personas: Registre personas a cargo de los documentos."
   home_p1l5: "Personas:  Ingrese, actualice o elimine personas."
-  home_p1l6: "Guia: Seleccione Guia en el registro de cada persona, para ver documentos a recibidos y/o entregados." 
+  home_p1l6: "Guia: Seleccione Guia en el registro de cada persona, para ver documentos a recibidos y/o entregados."
   home_p1l7: "Guia: Seleccionando el botón Guía, pasa a pantalla documentos"
   home_p1l8: "Guia: Cuando entrega el documento a una persona registrada en la aplicación, se crea la guia y se asigna automáticamente como enviado (Delivered). Una vez se recibe, el estado de la guía queda como recibido (Received)."
-  
+
   continue: "Continuar"
   email: "Email"
   log_in: "Conectar"
@@ -52,7 +52,7 @@ es:
   log_out: "Salir"
   forgot_password: "Olvido su contraseña?"
   characters_minimum: "caracteres mínimo"
-  remember_me: "Recordarme"  
+  remember_me: "Recordarme"
   branch: "Sucursal"
   branches: "Sucursales"
   citizenship: "Pais Origen"
@@ -73,9 +73,11 @@ es:
   back: "Regresar"
   editing: "Editando"
   update: "Actualizar"
+  filter: "Filtro"
 
-  mark_received: "Mark Received"
-  mark_delivered: "Mark Delivered"
+  add_new_track: "Adicionar nueva guia (track)"
+  mark_received: "Recibir"
+  mark_delivered: "Entregar"
 
   welcome: "Bienvenido"
   resend_confirmation_instructions: "Enviar instrucciones de confirmación"
@@ -89,7 +91,7 @@ es:
   to: " a "
   of: " de "
   for: " para "
-  
+
   someone_has_requested_a_link: "Alguien ha solicitado un enlace para cambiar su contraseña. Puede hacerlo esto en el enlace inferior."
 
   password: "Contraseña"

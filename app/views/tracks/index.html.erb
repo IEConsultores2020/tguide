@@ -8,9 +8,23 @@
 
   <%= render "form", track: Track.new %>
 
-  <%= turbo_stream_from "tracks" %>
+  <div>
+    <%= form_with url: tracks_path, method: :get, data: { turbo_frame: "tracks", controller: "search_form", action: "input->search_form#submit" } do %>
+        <%= text_field_tag "filter", nil, placeholder: t(:filter), class: "justify-items-end inline-block rounded-md border  border-gray-200 outline-none px-3 py-2 w-1/2", autocomplete: "off" %>
+    <% end %>
+  </div>
 
-  <ul id="tracks" class="divide-y list-none">
-    <%= render @tracks %>
-  </ul>
+  <div class="flex mt-12 items-center justify-center space-x-4 w-full">
+    <%== pagy_nav(@pagy) %>
+  </div>
+
+  <%= turbo_frame_tag "tracks" do  %>
+    <ul id="tracks" class="divide-y list-none">
+      <%= render @tracks %>
+    </ul>
+  <% end %>
+
+  <div class="flex mt-12 items-center justify-center space-x-4 w-full">
+    <%== pagy_nav(@pagy) %>
+  </div>
 </div>

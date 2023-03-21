@@ -14,17 +14,17 @@
   <%= form.hidden_field :branch_id, value: default_branch_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   <div class="my-5">
     <%= form.label t(:name) %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", autocomplete: "off"  %>
   </div>
 
   <div class="my-5">
     <%= form.label t(:email) %>
-    <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", autocomplete: "off"  %>
   </div>
 
   <div class="my-5">
     <%= form.label t(:citizenship) %>
-    <%= form.country_select :citizenship, priority_countries: ["CO"], class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.country_select :citizenship, priority_countries: ["CO"], class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", autocomplete: "off"  %>
   </div>
 
   <div class="my-5">

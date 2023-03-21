@@ -1,3 +1,5 @@
+FROM node:6.7.0
+RUN npm install -g yarn
 FROM ruby:3.1.2
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /tguide

@@ -5,12 +5,15 @@ class TracksController < ApplicationController
   before_action :set_track, only: %i[show edit update destroy]
 
   def default_assigned_id
-    params[:person_id].present? ? params[:person_id] : @track.assigned_id
+    session[:person_id] = params[:person_id] if params[:person_id].present?
+    assigned_id = session[:person_id]
+    puts "assigned_id #{assigned_id}"
+    return assigned_id
   end
   helper_method :default_assigned_id
 
   def default_assigned_name
-    Person.where(id: default_assigned_id).pluck(:name)[0]
+     Person.where(id: default_assigned_id).pluck(:name)[0]
   end
   helper_method :default_assigned_name
 
@@ -26,8 +29,9 @@ class TracksController < ApplicationController
 
   # GET /tracks or /tracks.json
   def index
-    @tracks = Track.where(owner_id: current_user.id, assigned_id: params[:person_id]).order(status: :asc,
-                                                                                            created_at: :asc, updated_at: :desc)
+    @pagy, @tracks = pagy(Track.where(owner_id: current_user.id,
+                          assigned_id: session[:person_id]).where("code LIKE ?",
+                                                          "%#{params[:filter]}%").order(status: :asc, created_at: :asc))
   end
 
   # GET /tracks/1 or /tracks/1.json
@@ -83,6 +87,15 @@ class TracksController < ApplicationController
       format.html { redirect_to tracks_url, notice: 'Track was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def list
+    session['filters'] = {} if session['filters'].blank?
+    session['filters'].merge!(filter_params)
+    @tracks = Track.where(owner_id: current_user.id,
+                          assigned_id: session[:person_id]).where("code LIKE ?",
+                                                          "%#{params[:filter]}%").order(status: :asc, created_at: :asc)
+    render(partial: 'tracks', locals: { tracks: @tracks })
   end
 
   private

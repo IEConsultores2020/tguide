@@ -48,6 +48,18 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'devise', '~> 4.8'
+
+gem 'country_select', '~> 8.0'
+
+# add this to your Gemfile
+gem 'email_validator', '~> 2.2', '>= 2.2.4'
+
+gem 'rubocop', require: false
+
+#Gem for pagination
+gem "pagy"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -76,12 +88,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem 'devise', '~> 4.8'
-
-gem 'country_select', '~> 8.0'
-
-# add this to your Gemfile
-gem 'email_validator', '~> 2.2', '>= 2.2.4'
-
-gem 'rubocop', require: false
