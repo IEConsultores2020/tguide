@@ -19,6 +19,15 @@
         </button>
 
         <%= link_to t(:home), root_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
+        <%# link_to :sites, site_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
+
+
+        <div>
+        <%= form_with url: find_tracks_path, method: :get, data: { turbo_frame: "modal", controller: "find_form", action: "input->find_form#submit" } do %>
+            <%= text_field_tag :query_track, nil, placeholder: t(:find_track), class: "justify-items-end inline-block rounded-md border  border-gray-200 outline-none px-3 py-2 w-2/3", autocomplete: "off" %>
+        <% end %>
+        </div>
+
         <%# link_to t(:companies), companies_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %>
         <%# link_to t(:branches), branches_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>
         <%# link_to t(:people), people_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium" %>

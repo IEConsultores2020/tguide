@@ -53,6 +53,7 @@ es:
   forgot_password: "Olvido su contraseña?"
   characters_minimum: "caracteres mínimo"
   remember_me: "Recordarme"
+  assigned_id: "assigned_id"
   branch: "Sucursal"
   branches: "Sucursales"
   citizenship: "Pais Origen"
@@ -74,10 +75,16 @@ es:
   editing: "Editando"
   update: "Actualizar"
   filter: "Filtro"
+  find_track: "Buscar Guia"
+  begin_with: "Inician con"
 
   add_new_track: "Adicionar nueva guia (track)"
   mark_received: "Recibir"
   mark_delivered: "Entregar"
+
+  assigned: "Responsable"
+  code:     "Guia Codigo"
+  create_at: "Creado En"
 
   welcome: "Bienvenido"
   resend_confirmation_instructions: "Enviar instrucciones de confirmación"

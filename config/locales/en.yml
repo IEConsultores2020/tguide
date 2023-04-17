@@ -73,11 +73,16 @@ en:
   Editing: "Editing"
   update: "Update"
   filter: "Filter"
+  find_track: "Find track"
+  begin_with: "Begin with"
 
   add_new_track: "Add new Track"
   mark_received: "Mark Received"
   mark_delivered: "Mark Delivered"
 
+  assigned: "Assigned"
+  code:     "Code Track"
+  create_at: "Created at"
 
   welcome: "Welcome"
   resend_confirmation_instructions: "Resend confirmation instructions"

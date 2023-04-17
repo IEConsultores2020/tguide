@@ -1,0 +1,49 @@
+<div class="mx-auto max-w-3xl mt-24">
+  <h1 class="font-bold text-4xl mb-6">
+    <%= t(:tracks) %> <%= t(:begin_with) %> <%= params[:query_track] %>
+  </h1>
+
+  <div class="flex mt-12 items-center justify-center space-x-4 w-full">
+  </div>
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th><%=t(:code) %></th>
+        <th><%=t(:assigned) %></th>
+        <th><%=t(:branch) %></th>
+        <th><%=t(:created) %></th>
+        <th><%=t(:modify) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tracks.each do |track| %>
+          <tr>
+          <td><%= track.code %></td>
+          <td><%= track.assigned_name %></td>
+          <td><%= track.branch_name %></td>
+          <td><%= track.created_at.in_time_zone("America/Bogota").utc.strftime('%m/%d/%Y') %></td>
+          <td> <%# link_to t(:edit), edit_track_path(track), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %></td>
+          <td><%= link_to :sites, site_path, data: {action: "click->dropdown#toggle"}, class: "rounded-none py-3 px-5 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-gray-300 text-white block font-medium"  %> <%# link_to t(:edit), sites_path, class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+          </td>
+          <td>
+          <div class="flex items-center space-x-3">
+          <% if track.delivered? %>
+              <%= button_to t(:mark_received), track_path(track, track: { status:  'received'}), method: :patch, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+          <% else %>
+              <%= button_to t(:mark_delivered), track_path(track, track: { status:  'delivered'}), method: :patch, class: "bg-gray-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+          <% end %>
+          </td>
+      </div>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+
+  <div class="flex mt-12 items-center justify-center space-x-4 w-full">
+    <div class="inline">
+
+    </div>
+  </div>
+</div>

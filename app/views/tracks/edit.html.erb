@@ -1,3 +1,33 @@
-<%= turbo_frame_tag dom_id(@track) do %>
-  <%= render "form", track: @track %>
+<%= form_with(model: @track, class: "contents") do |form| %>
+  <% if @track.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(@track.errors.count, "error") %> prohibited this track from being saved:</h2>
+
+      <ul>
+        <% @track.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label t(:code) %>
+    <%= form.text_field :code, autofocus: true, class: "block shadow-sm rounded-full border border-gray-200 outline-none px-6 py-4 w-full focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-50 text-lg placeholder:text-gray-400" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label t(:branch) %>
+    <%= select_tag :branch_id, options_from_collection_for_select(@branches, "id","name", @branch&.id), prompt: "-Select -", onchange: "this.form.submit()" %>
+    <%# form.collection_select :branch_id, Branch.all.order(:name).where(user_id: current_user.id), :id, :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label t(:person) %>
+    <%= form.collection_select :assigned_id,  Person.all.order(:name), :id, :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit t(:update), class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
 <% end %>

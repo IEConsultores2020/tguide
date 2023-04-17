@@ -89,13 +89,8 @@ class TracksController < ApplicationController
     end
   end
 
-  def list
-    session['filters'] = {} if session['filters'].blank?
-    session['filters'].merge!(filter_params)
-    @tracks = Track.where(owner_id: current_user.id,
-                          assigned_id: session[:person_id]).where("code LIKE ?",
-                                                          "%#{params[:filter]}%").order(status: :asc, created_at: :asc)
-    render(partial: 'tracks', locals: { tracks: @tracks })
+  def find
+    @tracks = Track.where(owner_id: current_user.id).where("code LIKE ?","%#{params[:query_track]}%").order(code: :asc)
   end
 
   private

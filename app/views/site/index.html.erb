@@ -1,0 +1,14 @@
+<%= turbo_frame_tag "form" do %>
+  <%= form_tag root_path, method: :get, data: { controller: "dropdown", action: "change->dropdown#submit" } do %>
+    <%= select_tag :branch, options_from_collection_for_select(@branches, "id", "name", @branch&.id), prompt: "- Please select -" %>
+    <%= select_tag :person, options_from_collection_for_select(@people, "id", "name", @person&.id), prompt: "- Person -" %>
+  <% end %>
+
+  <% if @person %>
+    <div class="mt-4">
+      <span class="inline-block mr-2">✅</span>
+      Was changed the track to <strong><%= "#{@person.name} #{@branch.name}" %></strong>.
+      <div class="mt-4"><%= link_to "Pick another", root_path, class: "text-blue-600 underline", data: { turbo_frame: "_top" } %></div>
+    </div>
+  <% end %>
+<% end %>
