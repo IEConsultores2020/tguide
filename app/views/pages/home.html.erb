@@ -1,28 +1,30 @@
+<%= form_with url: branches_path, method: :get do |form| %>
 <div style="overflow-x:auto;">
   <table>
     <tr>
-      <%= button_to t(:continue), branches_path, method: :get, class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
+      <%= form.submit "continue", class: "bg-teal-500 px-3 py-2 rounded inline-flex items-center justify-center text-white-600" %>
     </tr>
     <tr>
       <h1 class="font-bold text-4xl"><%= t(:home_title) %></h1>
       <br>
-      <h2> <%= t(:home_p1l1) %> </h2> 
+      <h2> <%= t(:home_p1l1) %> </h2>
       <br>
-      <h2> <%= t(:home_p1l2) %> </h2> 
+      <h2> <%= t(:home_p1l2) %> </h2>
       <br>
       <h2> <%= t(:home_p1l3) %> <h2>
       <br>
-      <h3> <%= t(:home_p1l4) %> </h3> 
-      <h3> <%= t(:home_p1l5) %> </h3> 
-      <br>      
-      <h3> <%= t(:home_p1l6) %> <h3>  
-      <h3> <%= t(:home_p1l7) %> <h3>    
-      <h3> <%= t(:home_p1l8) %> <h3>    
+      <h3> <%= t(:home_p1l4) %> </h3>
+      <h3> <%= t(:home_p1l5) %> </h3>
+      <br>
+      <h3> <%= t(:home_p1l6) %> <h3>
+      <h3> <%= t(:home_p1l7) %> <h3>
+      <h3> <%= t(:home_p1l8) %> <h3>
       <br>
       <% content_tag(:div, "", data: {
       controller: "track"
       })%>
     </div>
-    </tr>    
+    </tr>
   </table>
 </div>
+<% end %>
