@@ -43,7 +43,7 @@ en:
   home_p1l6: "Track: The track or guide is the unique identificatión of the document."
   home_p1l7: "The registered user can to assign documents (delivered) or to receive (received) document."
   home_p1l8: "The list is ordered first the documents delivered ordered by date the more old to more recent. And next the received"
-
+  home_payments: "If you consider our work to be valuable and would like to support it, please use the Bancolombia app, scan the QR code, and make a cash contribution of your choiceIf you consider our work a good job, and want to support it. Use the bancolombia app, read QE code and make your free cash contribution"
   continue: "Continue"
   email: "email"
   log_in: "Login"

@@ -43,6 +43,7 @@ es:
   home_p1l6: "Guia: Seleccione Guia en el registro de cada persona, para ver documentos a recibidos y/o entregados."
   home_p1l7: "Guia: Seleccionando el botón Guía, pasa a pantalla documentos"
   home_p1l8: "Guia: Cuando entrega el documento a una persona registrada en la aplicación, se crea la guia y se asigna automáticamente como enviado (Delivered). Una vez se recibe, el estado de la guía queda como recibido (Received)."
+  home_payments: "Si considera que hacemos un buen trabajo y quiere apoyarlo. Usando la app bancolombia, lea el código QR y deje su aporte"
 
   continue: "Continuar"
   email: "Email"
