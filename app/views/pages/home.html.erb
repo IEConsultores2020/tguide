@@ -26,11 +26,42 @@
     </div>
     </tr>
     <tr>
-      <td>
-        <h2> <%= t(:home_payments) %> </h2>
+      <div style="display: flex; justify-content: left; text-slate-300">
+      <h3 class="font-bold "> <%= t(:your_social_network_message) %> </h3>
+        <%= link_to "Tweet to @ieconsultores", "https://twitter.com/intent/tweet?screen_name=ieconsultores&text="+t(:your_social_network_message), class: "twitter-mention-button", data: { related: "nanduchocom" } %>        
+      </div>
+      <br>
+    </tr>          
+    <tr>
+        <h3 class="font-bold ">  <%= t(:home_payments) %> </h3>
+    </tr>      
+    <tr>
+      <td style="text-align: center;">
+        <div style="display: flex; justify-content: center;">
+          PayPal
+        </div>      
+        <div style="display: flex; justify-content: center; size-44;">
+          <%= link_to image_tag("paypalbutton.png", width: 150, height: 150), 'https://www.paypal.com/ncp/payment/492MBR2B8HDK6', target: '_blank', class:"justify-center" %>
+          <%= javascript_tag do %>
+            !function(d,s,id){
+              var js, fjs = d.getElementsByTagName(s)[0],
+              p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s); js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js,fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          <% end %>
+        </div>
       </td>
-      <td>
-        <img id="CodeQR TrackMyPapers" src="<%= asset_path('QRDigital_TMyP.png') %>" draggable="true" ondragstart="drag(event)" width="300" height="300">
+      <td style="text-align: center; vertical-align: middle;" > 
+      <div style="display: flex; justify-content: center;">
+        QR Bancolombia
+      </div>
+        <div style="display: flex; justify-content: center ; size-44 ;">
+          <img id="CodeQR TrackMyPapers" src="<%= asset_path('QRDigital_TMyP.png') %>"  draggable="true" ondragstart="drag(event)" width="150" height="150">
+        </div>
       </td>
     </tr>
   </table>

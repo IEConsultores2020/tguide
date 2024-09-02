@@ -33,7 +33,7 @@ en:
   hello_world: "Hello world"
   hello: "Hola"
   header_trackofmypapers: "Track My Papers"
-  home: "Inicio"
+  home: "Home"
   home_title: "ADMINISTRATION OF PAPERS WITH UNIQUE IDENTIFICATION"
   home_p1l1: "Take control of papers like forms, certificates, records, or reports, which it's identified with a unique number called track, TGUIDE helps you."
   home_p1l2: "When delivering this paper to a person is registered on the app, assigning the status Delivered automatically. Upon receiving, the status is changed a Received."
@@ -43,7 +43,8 @@ en:
   home_p1l6: "Track: The track or guide is the unique identificatión of the document."
   home_p1l7: "The registered user can to assign documents (delivered) or to receive (received) document."
   home_p1l8: "The list is ordered first the documents delivered ordered by date the more old to more recent. And next the received"
-  home_payments: "If you consider our work to be valuable and would like to support it, please use the Bancolombia app, scan the QR code, and make a cash contribution of your choiceIf you consider our work a good job, and want to support it. Use the bancolombia app, read QE code and make your free cash contribution"
+  home_payments: "If you find this app valuable, you can support us."
+  your_social_network_message: Hi!, I'm reaching out regarding the TrackMyPapers app for...
   continue: "Continue"
   email: "email"
   log_in: "Login"
@@ -81,14 +82,14 @@ en:
   mark_delivered: "Mark Delivered"
 
   assigned: "Assigned"
-  code:     "Code Track"
+  code: "Code Track"
   create_at: "Created at"
 
   welcome: "Welcome"
   resend_confirmation_instructions: "Resend confirmation instructions"
   send_reset_password_instruction: "Send me reset password instructions"
 
-  confirm_account: 'Confirm my account'
+  confirm_account: "Confirm my account"
   you_can_confirm: "You can confirm your account email through the link below:"
   weare_contacting: "We're contacting you to notify you that your email "
   is_being_changed: "is being changed to "
@@ -96,8 +97,6 @@ en:
   to: " to "
   of: " de "
   for: " for "
-
-
 
   someone_has_requested_a_link: "Someone has requested a link to change your password. You can do this through the link below."
 
@@ -122,4 +121,4 @@ en:
   resend_unlock_instructions: "Resend unlock instructions"
 
   currently_waiting_confirmation: "Currently waiting confirmation for:"
-  leave_blank_if_donot_want_change_it : "(leave blank if you don't want to change it)"
+  leave_blank_if_donot_want_change_it: "(leave blank if you don't want to change it)"

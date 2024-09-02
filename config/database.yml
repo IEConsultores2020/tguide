@@ -21,14 +21,14 @@ default: &default
   #password: password
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   host: db
   database: tguide_development
   password: password
+  #<%= ENV['development_db_passsword'] %>
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -63,7 +63,7 @@ test:
   <<: *default
   host: db
   database: tguide_test
-  password: password
+  password: <%= ENV['test_db_passsword'] %>
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -87,5 +87,5 @@ test:
 production:
   <<: *default
   host: 0.0.0.0
-  database: tguide_production
-  password: <%= ENV["TGUIDE_DATABASE_PASSWORD"] %>
+  database: tguide_development
+  password: <%= ENV["tguide_database_password"] %>
