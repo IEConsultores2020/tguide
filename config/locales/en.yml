@@ -43,8 +43,8 @@ en:
   home_p1l6: "Track: The track or guide is the unique identificatión of the document."
   home_p1l7: "The registered user can to assign documents (delivered) or to receive (received) document."
   home_p1l8: "The list is ordered first the documents delivered ordered by date the more old to more recent. And next the received"
-  home_payments: "If you find this app valuable, you can support us."
-  your_social_network_message: Hi!, I'm reaching out regarding the TrackMyPapers app for...
+  home_payments: "Do you find this app valuable? Support us."
+  your_social_network_message: "Contact us, on social media : "
   continue: "Continue"
   email: "email"
   log_in: "Login"

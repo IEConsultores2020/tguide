@@ -26,15 +26,41 @@
     </div>
     </tr>
     <tr>
+      <th colspan="3">
       <div style="display: flex; justify-content: left; text-slate-300">
       <h3 class="font-bold "> <%= t(:your_social_network_message) %> </h3>
-        <%= link_to "Tweet to @ieconsultores", "https://twitter.com/intent/tweet?screen_name=ieconsultores&text="+t(:your_social_network_message), class: "twitter-mention-button", data: { related: "nanduchocom" } %>        
       </div>
-      <br>
-    </tr>          
+      </th>
+    </tr>
     <tr>
-        <h3 class="font-bold ">  <%= t(:home_payments) %> </h3>
+      <td>
+        <div style="display: flex; justify-content: left; text-slate-300 ">
+        <%= link_to "Tweet to @ieconsultores", "https://twitter.com/intent/tweet?screen_name=ieconsultores&text="+t(:your_social_network_message), class: "twitter-mention-button", data: { related: "nanduchocom" } %>        
+        </div>
+      </td>
+      <td>
+        <div style="display: flex; justify-content: left; text-slate-300">
+          <%= link_to image_tag("http://www.ieconsultores.com/images/Facebook-New-Logo.png", width: 79, height: 30), 'https://www.facebook.com/IEConsultoresCol/', target: '_blank', class:"justify-center" %>
+        </div>
+      </td>
+      <td>
+        <div style="display: flex; justify-content: left; text-slate-300">
+          <%= link_to image_tag("http://www.ieconsultores.com/images/linkedin_logos/LI-In-Bug.png", width: 41, height: 35), 'https://www.linkedin.com/company/79662233', target: '_blank', class:"justify-center" %>
+        </div>
+      </td>      
+    </tr>   
+    <tr>
+      <th colspan="3">
+      <div style="display: flex; justify-content: left; text-slate-300 bg-gradient-to-t">     
+      <div>
+      </th>
+    </tr>
+    <tr>
+        <th colspan="3">
+          <h3 class="font-bold ">  <%= t(:home_payments) %> </h3>
+        </th>
     </tr>      
+    <tr></tr>
     <tr>
       <td style="text-align: center;">
         <div style="display: flex; justify-content: center;">
@@ -56,13 +82,16 @@
         </div>
       </td>
       <td style="text-align: center; vertical-align: middle;" > 
-      <div style="display: flex; justify-content: center;">
-        QR Bancolombia
-      </div>
+        <div style="display: flex; justify-content: center;">
+          QR Bancolombia
+        </div>
         <div style="display: flex; justify-content: center ; size-44 ;">
-          <img id="CodeQR TrackMyPapers" src="<%= asset_path('QRDigital_TMyP.png') %>"  draggable="true" ondragstart="drag(event)" width="150" height="150">
+          <%= link_to image_tag("QRDigital_TMyP.png", width: 150, height: 150), 'assets/QRDigital_TMyP.png', target: '_blank', class:"justify-center" %>
         </div>
       </td>
+      <td style="text-align: center; vertical-align: middle;" > 
+
+      </td>      
     </tr>
   </table>
 </div>
